@@ -1,0 +1,41 @@
+.box {
+  height: 200px;
+  width: 200px;
+  overflow: auto;
+  background: red;
+}
+
+.product--grid {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 40em) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2px;
+  }
+}
+
+.message-error {
+  background: red;
+  color: white;
+  opacity: 0;
+  transition: all linear 0.5s;
+
+  &.invalid {
+    opacity: 1;
+  }
+}
+
+.line-error {
+  height: 0;
+  border-bottom: 1px solid;
+
+  &.invalid {
+    border-color: red;
+  }
+
+  &.valid {
+    border-color: green;
+  }
+}
